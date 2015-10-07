@@ -19,7 +19,7 @@ angular.module('d3App', [])
 			.type("tree_map")
 			.id("name")
 			.size("value")
-			.color("name")
+			.color("growth")
 			.draw()
 
 		$scope.updateChart = function() {
@@ -32,12 +32,10 @@ angular.module('d3App', [])
 		$scope.updateChartParam1 = function() {
 				console.log("Hello Char");
 			$scope.chart_data = [
-				{"value": 111, "name": "alpha"},
-				{"value": 10, "name": "beta"},
-				{"value": 10, "name": "gamma"},
-				{"value": 500, "name": "delta"},
-				{"value": 53, "name": "epsilon"},
-				{"value": 44, "name": "zeta"}
+			{"value": 100, "name": "hola", "growth": .9},
+			{"value": 40, "name": "hello", "growth": .4},
+			{"value": 15, "name": "epsilon", "growth": .7},
+			{"value": 1, "name": "zeta", "growth": .2}
 			];
 			$scope.visualization
 			.data($scope.chart_data)
@@ -48,12 +46,10 @@ angular.module('d3App', [])
 		$scope.updateChartParam2 = function() {
 				console.log("Hello Char");
 			$scope.chart_data = [
-				{"value": 11, "name": "a"},
-				{"value": 57, "name": "b"},
-				{"value": 60, "name": "g"},
-				{"value": 35, "name": "d"},
-				{"value": 73, "name": "e"},
-				{"value": 30, "name": "z"}
+			{"value": 100, "name": "bye", "growth": .3},
+			{"value": 40, "name": "Adios", "growth": .4},
+			{"value": 15, "name": "epsilon", "growth": .1},
+			{"value": 1, "name": "zeta", "growth": .2}
 			];
 			$scope.visualization
 			.data($scope.chart_data)
