@@ -1,7 +1,3 @@
-/* Hard coded for simplicty. A better approach would be to use relative values. */
-var chart_width = 500;
-var chart_height = 250;
-
 angular.module('d3App', [])
 	.controller('mainController', ["$scope", function($scope){
 		$scope.chart_data = [
