@@ -1,12 +1,10 @@
 angular.module('d3App', [])
 	.controller('mainController', ["$scope", function($scope){
 		$scope.chart_data = [
-		{"value": 100, "name": "alpha", "growth": .9},
-		{"value": 70, "name": "beta", "growth": .4},
-		{"value": 40, "name": "gamma", "growth": -.3},
-		{"value": 15, "name": "delta", "growth": -.65},
-		{"value": 5, "name": "epsilon", "growth": .7},
-		{"value": 1, "name": "zeta", "growth": .2}
+			{"value": 10, "name": "A", "growth": -.9},
+			{"value": 40, "name": "B", "growth": .4},
+			{"value": 15, "name": "C", "growth": .7},
+			{"value": 80, "name": "D", "growth": -.2}
 		];
 
 		$scope.visualization = d3plus.viz()
@@ -15,7 +13,10 @@ angular.module('d3App', [])
 			.type("tree_map")
 			.id("name")
 			.size("value")
-			.color("growth")
+			.color({
+		    "range": [ "#FA58AC" , "gray" , "#819FF7" ],
+		    "value": "growth"
+		  })
 			.draw()
 
 		$scope.updateChart = function() {
@@ -28,10 +29,10 @@ angular.module('d3App', [])
 		$scope.updateChartParam1 = function() {
 				console.log("Hello Char");
 			$scope.chart_data = [
-			{"value": 100, "name": "hola", "growth": .9},
-			{"value": 40, "name": "hello", "growth": .4},
-			{"value": 15, "name": "epsilon", "growth": .7},
-			{"value": 1, "name": "zeta", "growth": .2}
+			{"value": 10, "name": "A", "growth": -.9},
+			{"value": 40, "name": "B", "growth": .4},
+			{"value": 15, "name": "C", "growth": .7},
+			{"value": 80, "name": "D", "growth": -.2}
 			];
 			$scope.visualization
 			.data($scope.chart_data)
@@ -42,10 +43,10 @@ angular.module('d3App', [])
 		$scope.updateChartParam2 = function() {
 				console.log("Hello Char");
 			$scope.chart_data = [
-			{"value": 100, "name": "bye", "growth": .3},
-			{"value": 40, "name": "Adios", "growth": .4},
-			{"value": 15, "name": "epsilon", "growth": .1},
-			{"value": 1, "name": "zeta", "growth": .2}
+			{"value": 100, "name": "A", "growth": .3},
+			{"value": 40, "name": "B", "growth": -.4},
+			{"value": 15, "name": "C", "growth": -.1},
+			{"value": 1, "name": "D", "growth": .2}
 			];
 			$scope.visualization
 			.data($scope.chart_data)
